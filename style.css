@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --stroke-color: rgb(170, 170, 170);
+  --background-list: rgba(121, 121, 121, 0.1);
+  --hover: rgba(153, 0, 255, 0.1);
+  --color-font: rgb(214, 214, 214);
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --background-url: url("assets/bg-desktop.jpg");
+  --switch-bg: url("assets/MoonStars.svg");
+  --bg-about: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.light {
+  --stroke-color: rgb(32, 32, 32);
+  --background-list: rgba(0, 0, 0, 0.1);
+  --background-url: url("assets/bg-desktop-light.jpg");
+  --hover: rgba(153, 0, 255, 0.1);
+  --color-font: rgb(0, 0, 0);
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --switch-bg: url("assets/Sun.svg");
+  --bg-about: linear-gradient(
+    180deg,
+    rgba(247, 226, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+body {
+  background-image: var(--background-url);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
+  transition: background-image 0.5s ease, color 0.5s ease;
+}
+
+#container,
+#profile,
+#sub,
+#profile p,
+ul li,
+ul li a,
+#social a,
+#switch span {
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#container {
+  width: 100%;
+  max-width: 587px;
+  height: 720px;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#profile-img {
+  width: 184px;
+  height: 184px;
+  border-radius: 50%;
+  border: 5px solid var(--stroke-color);
+}
+
+#sub {
+  font-size: 20px;
+  color: var(--color-font);
+  font-weight: 500;
+}
+
+#profile p {
+  font-size: 32px;
+  color: var(--color-font);
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul li {
+  background-color: var(--background-list);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: background-color 0.5s;
+}
+
+ul li:hover {
+  background-color: var(--hover);
+}
+
+ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--color-font);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#social {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-size: 40px;
+}
+
+#social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-font);
+  padding: 16px;
+  border-radius: 50%;
+  transition: background-color 0.5s;
+}
+
+#social a:hover {
+  background-color: var(--hover);
+}
+
+#switch {
+  position: relative;
+  width: 76px;
+  margin: 10px auto;
+}
+
+#switch button {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg) no-repeat center;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+  animation: switchLight 0.3s forwards;
+}
+
+.dark #switch button {
+  left: 0;
+  right: initial;
+  animation: switchDark 0.3s forwards;
+}
+
+#switch span {
+  display: block;
+  width: 74px;
+  height: 30px;
+  background: var(--background-list);
+  border: 1px solid var(--stroke-color);
+  border-radius: 20px;
+}
+
+#about.hidden {
+  animation: hide 0.5s forwards;
+}
+
+#about {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  padding: 50px;
+  width: 300px;
+  background: var(--bg-about);
+  animation: hide 0.5s forwards;
+}
+
+#about.visible {
+  animation: fadeIn 0.5s forwards;
+}
+
+#about-text {
+  display: flex;
+  color: var(--color-font);
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  gap: 15px;
+}
+
+#about-icons {
+  display: flex;
+  flex: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+#about div p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.about-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-font);
+}
+
+.about-link:hover {
+  text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  color: var(--color-font);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes switchLight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 44px;
+  }
+}
+
+@keyframes switchDark {
+  0% {
+    left: 44px;
+  }
+  100% {
+    left: 0;
+  }
+}

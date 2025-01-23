@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bruno Forgiarini</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="profile">
+        <img
+          id="profile-img"
+          src="./assets/profile.png"
+          alt="Icone de perfil"
+        />
+        <p>
+          Bruno Forgiarini
+          <br />
+          <span id="sub">Desenvolvedor Fullstack</span>
+        </p>
+      </div>
+      <div id="switch" onClick="switchTheme()">
+        <button></button>
+        <span></span>
+      </div>
+      <ul>
+        <li>
+          <a href="https://www.beforg.my" target="_blank">Portfólio</a>
+        </li>
+        <li>
+          <a href="https://github.com/Beforg?tab=repositories" target="_blank"
+            >Projetos</a
+          >
+        </li>
+        <li>
+          <a onclick="showAbout()">Sobre</a>
+        </li>
+      </ul>
+      <div id="social">
+        <a href="https://www.github.com/Beforg" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/beforg/" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+    </div>
+    <div id="about" class="hidden">
+      <div id="about-text">
+        <h1>Sobre mim</h1>
+        <p>
+          Olá, meu nome é Bruno Forgiarini, tenho 23 anos, sou desenvolvedor
+          Fullstack com foco em Java/Angular e estudante de Engenharia de
+          Computação na Universidade Federal do Pampa (Bagé-RS). Durante minha
+          jornada realizei alguns projetos relevantes como um Sistema de
+          <a href="" class="about-link">Atendimentos</a> feito em Java com
+          PostgreSQL e, recentemente,<a class="about-link" href=""> Lumostudy</a
+          >, um projeto fullstack utilizando Java/Spring, Angular e PostgreSQL,
+          com foco nos estudantes (projeto em desenvolvimento). Atualmente,
+          estou focado no Front-End, aprimorando minhas habilidades em
+          tecnologias como HTML, CSS, JavaScript, React, Node.js. Estou em
+          constante busca por novos desafios e oportunidades a fim de aprender e
+          crescer profissionalmente.
+        </p>
+      </div>
+      <div id="about-icons">
+        <img class="icon" src="assets/angular.png" alt="Icone do Angular" />
+        <img class="icon" src="assets/java.png" alt="Icone do Java" />
+        <img class="icon" src="assets/spring.png" alt="Icone do Spring" />
+        <img class="icon" src="assets/psql.png" alt="Icone do PostgreSQL" />
+      </div>
+    </div>
+    <footer>
+      <p>Feito por Bruno Forgiarini</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>
