@@ -181,7 +181,7 @@ ul li a {
 }
 
 #about.hidden {
-  animation: hide 0.5s forwards;
+  display: none;
 }
 
 #about {
@@ -189,15 +189,13 @@ ul li a {
   bottom: 0;
   right: 0;
   top: 0;
-  opacity: 0;
   padding: 50px;
   width: 300px;
   background: var(--bg-about);
-  animation: hide 0.5s forwards;
 }
 
 #about.visible {
-  animation: fadeIn 0.5s forwards;
+  animation: show 0.5s forwards;
 }
 
 #about-text {
@@ -244,7 +242,7 @@ footer {
   color: var(--color-font);
 }
 
-@keyframes fadeIn {
+@keyframes show {
   0% {
     opacity: 0;
   }
